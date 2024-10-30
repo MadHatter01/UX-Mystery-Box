@@ -1,0 +1,38 @@
+body {
+    font-family: Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #app {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  button{
+    background-color: black;
+    color:white;
+    border:none;
+    padding:1rem;
+    border: 3px solid transparent;
+  }
+  button:hover{
+    background-color: white;
+    border:3px solid black;
+    color:black;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    cursor:pointer;
+    
+  }
+  
+  #promptScreen{
+    margin-bottom:4rem;
+  }
