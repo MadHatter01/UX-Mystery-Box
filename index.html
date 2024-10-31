@@ -1,33 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>UX Design Mystery Box</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div id="app">
-    <div id="home">
-      <h1>UX Design Mystery Box</h1>
-      <p>Welcome to the UX Design Mystery Box Activity. Click below to begin.</p>
-      <button onclick="startSession()">Start Session</button>
-    </div>
-
-    <div id="promptScreen" class="hidden">
-      <h2>Your Prompt</h2>
-      <div id="promptBox"></div>
-      <button id="nextR" onclick="generatePrompt()">Get New Prompt</button>
-      <button id="nextC" class="hidden" onclick="nextRound()">View Constraints</button>
-    </div>
-
-    <div id="viewConstraints" class="hidden">
-      <h2>Constraint Round</h2>
-      <div id="constraintBox"></div>
-      <button onclick="generateConstraint()">Get New Constraint</button>
-    </div>
-
-  </div>
-
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
