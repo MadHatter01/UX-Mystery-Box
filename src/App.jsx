@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Welcome from './components/Welcome';
 import PromptScreen from './components/PromptScreen';
+import ViewConstraints from './components/ViewConstraints';
 
 function App() {
   const prompts = [
@@ -44,17 +45,43 @@ function App() {
   ];
   
   const [screen, setScreen] = useState('home');
-  const [prompt, setPrompt] = useState(prompts[0])
+  const [prompt, setPrompt] = useState(prompts[0]);
+  const [constraint, setConstraint] = useState(constraints[0]);
+  const [activity, setActivity] = useState(false)
 
   const startSession = () =>{
     setScreen('promptScreen');
+    setActivity(true)
+  }
+
+  const generatePrompt = ()=>{
+    const randomPrompt = prompts[Math.floor(Math.random() * prompts.length)];
+    setPrompt(randomPrompt);
+  }
+
+  const generateConstraint = () =>{
+    const randomConstraint = constraints[Math.floor(Math.random() * constraints.length)];
+    setConstraint(randomConstraint);
+  }
+
+  const nextRound = () =>{
+    setScreen('viewConstraints');
   }
 
   return (
     <>
     <div>
       {screen === 'home' && <Welcome startSession={startSession} />}
-      {screen === 'promptScreen' && <PromptScreen prompt={prompt}/>}
+      {activity && (
+        <div className='view'>
+        <PromptScreen prompt={prompt} generatePrompt={generatePrompt} nextRound={nextRound}/>
+        <ViewConstraints constraint={constraint} generateConstraint={generateConstraint} />
+        </div>
+      )}
+      {/* {screen === 'promptScreen' && <PromptScreen prompt={prompt} generatePrompt={generatePrompt} nextRound={nextRound}/>}
+      {screen === 'viewConstraints' && (
+    
+      )} */}
     </div>
 
     </>
