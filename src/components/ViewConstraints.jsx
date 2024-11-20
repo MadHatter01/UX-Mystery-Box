@@ -6,7 +6,7 @@ const ViewConstraints = ({ constraint, generateConstraint }) => {
         <div id="viewConstraints" className="hidden">
             <h2>Constraint Round</h2>
             <div id="constraintBox">{constraint}</div>
-            <button onClick={generateConstraint}>Get New Constraint</button>
+            <button className='customBtn' onClick={generateConstraint}>Get New Constraint</button>
         </div>
     )
 }
